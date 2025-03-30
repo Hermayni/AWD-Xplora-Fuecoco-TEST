@@ -25,12 +25,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Profile Icon Click - Redirect if logged in, otherwise go to login
     document.querySelector(".profile-icon").addEventListener("click", function () {
+          feature/header-nav-logic
         handleAuthRedirect("../../pages/profile/index.html"); // Adjust the path as needed
+
+        window.location.href = "./../pages/page2/index.html" ; // Adjust the path as needed
+         main
     });
 
     // "Click to View Top Spots" Button - Redirect if logged in, otherwise go to login
     document.querySelector(".hero-text .btn").addEventListener("click", function () {
+        feature/header-nav-logic
         handleAuthRedirect("../../pages/top-spots/index.html"); // Adjust the path as needed
+
+        window.location.href = "./../pages/page2/index.html" ; // Adjust the path as needed
+         main
     });
 
 
