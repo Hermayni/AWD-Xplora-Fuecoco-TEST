@@ -33,6 +33,5 @@ document.addEventListener("DOMContentLoaded", function () {
         handleAuthRedirect("../../pages/top-spots/index.html"); // Adjust the path as needed
     });
 
-    
 
 });
