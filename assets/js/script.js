@@ -34,6 +34,4 @@ document.addEventListener("DOMContentLoaded", function () {
         handleAuthRedirect("../../pages/top-spots/index.html"); // Adjust the path as needed
         window.location.href = "./../pages/page2/index.html" ; // Adjust the path as needed
     });
-
-
 });
