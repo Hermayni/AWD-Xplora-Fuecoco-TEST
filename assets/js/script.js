@@ -40,4 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "./../pages/page2/index.html" ; // Adjust the path as needed
          main
     });
+
+
 });
