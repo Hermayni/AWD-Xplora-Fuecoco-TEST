@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Syncopate';
-    background: url('/pages/About Us/assets/img/V1.jpg') no-repeat center center fixed;
+    background: url('./../img/V1.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
     margin: 0;
