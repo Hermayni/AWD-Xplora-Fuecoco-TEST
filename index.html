@@ -1,57 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xplora</title>
     <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico">
-     <!--Icon Library-->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-     <script src="https://kit.fontawesome.com/b93004a0bd.js"></script>
-     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
-
-
-     <!-- Font -->
-       <link rel="preconnect" href="https://fonts.googleapis.com">
-       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-       <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- CDNJS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/b93004a0bd.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 </head>
+
 <body>
+    <!-- Navigation -->
     <header class="nav">
-    <div class="right-nav">
-        <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#" class="syncopate-regular active-page">HOME</a></li>
-                <li><a href="#" class="syncopate-regular">ABOUT</a></li>
-                <li><a href="#" class="syncopate-regular">MAP</a></li>
-            </ul>
-        </nav>
-    </div>
-    <div class="logo">
-        <img src="./assets/img/xploraLogo.png" alt="XPLORA Logo">
-    </div>
-        <div class="auth-links">
-            <button class="login syncopate-regular">LOG IN</button>
-            <button class="register syncopate-regular">REGISTER</button>
+        <div class="right-nav">
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="./index.html" class="syncopate-regular">HOME</a></li>
+                    <li><a href="./pages/About Us/index.html" class="syncopate-regular">ABOUT</a></li>
+                    <li><a href="#" class="syncopate-regular">MAP</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="logo">
+            <img src="./assets/img/xploraLogo.png" alt="XPLORA Logo">
+        </div>
+
+        <!-- User Profile Icon -->
+        <div class="profile-icon">
+            <i class="fas fa-user-circle fa-2x"></i>
         </div>
     </header>
-    
-    <section class="hero">
-        <div class="hero-content">
-            <button class="explore-btn syncopate-bold">START EXPLORING</button>
-            <p class="syncopate-regular">DISCOVER THE WORLD FROM ABOVE</p>
-        </div>
-    </section>
-    
-    <footer>
-        <p class="syncopate-regular">&copy; 2025 URBAN EXPLORER. ALL RIGHTS RESERVED.</p>
-    </footer>
+
+   <!-- Hero Section -->
+<section class="hero">
+    <div class="hero-text">
+        <h1 class="syncopate-bold">HELLO.<br>I'M XPLORA.</h1>
+        <p class="syncopate-regular">GUIDE YOU AROUND IN URBAN ESCAPES AND HIDDEN GEMS IN THE METRO</p>
+        <button class="btn">CLICK TO VIEW TOP SPOTS</button>
+    </div>
+
+    <div class="hero-icon">
+        <img src="./assets/img/mapPointer.png" alt="Map Smiley" style="width: 200px;">
+    </div>
+</section>
+
+<!-- Quick Links (NOW OUTSIDE THE HERO SECTION) -->
+<section class="quick-links">
+    <p class="syncopate-regular">QUICK LINKS</p>
+    <div class="links-container">
+      <button class="link-box" onclick="scrollToSection('services')">SERVICES</button>
+      <button class="link-box" onclick="scrollToSection('info')">INFO</button>
+      <button class="link-box" onclick="scrollToSection('contact')">CONTACT</button>
+  </div>
+  
+</section>
+
+<hr class="section-divider">
+
+<div id="services" class="services-container">
+  <h1 class="title">SERVICES</h1>
+  <div class="text-box">
+    <p>Xplora is your ultimate urban exploration companion, designed to help users discover and share the best chill, study, and dining spots in the metro. Our app offers a seamless experience that enhances city exploration through the following key services:</p>
+
+    <div class="section-title">1. Discover Urban Hotspots</div>
+    <p>- Explore popular and hidden gems in the city, from cozy cafés and study hubs to trendy restaurants and relaxing hangout spots.<br>
+    - Get recommendations based on trending locations and user ratings.</p>
+
+    <div class="section-title">2. User-Generated Posts & Reviews</div>
+    <p>- Share your favorite spots by submitting posts with descriptions, images, and personal insights.<br>
+    - Engage with the community by upvoting or downvoting locations based on your experience.</p>
+
+    <div class="section-title">3. Interactive Search & Navigation</div>
+    <p>- Quickly find the best places near you using the search bar.<br>
+    - Use our navigation menu for easy access to categorized spots like business hubs, social spaces (tambayan), and tourist-friendly locations.</p>
+
+    <div class="section-title">4. Community Ratings & Trust System</div>
+    <p>- Rate other users to establish credibility and reliability in reviews.<br>
+    - Build a trustworthy community by contributing honest feedback.</p>
+
+    <div class="section-title">5. Forums & Discussions</div>
+    <p>- Connect with fellow urban explorers through discussion threads.<br>
+    - Ask for recommendations, share experiences, and engage in meaningful conversations.</p>
+
+    <div class="section-title">6. Personalized Experience</div>
+    <p>- Save favorite locations for future visits.<br>
+    - Receive curated suggestions based on your interests and past explorations.</p>
+
+    <p>Xplora is more than just a city guide—it’s a community-driven platform that brings urban adventurers together. Start exploring and make every city trip an adventure!</p>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+
+<div id="info" class="info-container">
+  <h1 class="title">INFO</h1>
+  <div class="info-text-box">
+    <p>Welcome to Xplora, the ultimate guide for urban explorers looking to uncover the best chill, study, and dining spots in the metro. Whether you're searching for a quiet café to work in, a hidden gem to hang out with friends, or a must-try food spot, Xplora makes discovering the city easier and more exciting.</p>
+    <p>Our platform is built for a community of adventurers who love to share their favorite places, review hidden gems, and engage with others who have the same passion for urban exploration. Through user-generated posts, ratings, and interactive forums, we create a trusted space where every recommendation comes from real experiences.</p>
+    <p>At Xplora, we believe that every corner of the city has something unique to offer. Our goal is to connect people with these places and foster a community that values discovery, authenticity, and shared experiences.
+      Join us in exploring the metro—one spot at a time.</p>
+   
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<section id="contact" class="contact-section">
+
+    <h2>CONTACT</h2>
+    <div class="contact-box">
+      <div class="contact-item">
+        <i class="fas fa-phone-alt contact-icon"></i>
+        <p>+63 916-683-2951</p>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-envelope contact-icon"></i>
+        <p>XPLORA@GMAIL.COM</p>
+      </div>
+    </div>
+  </section>
+
+<hr class="section-divider">
+
+<footer class="footer">
+    <div class="footer-container">
+
+      <!-- Logo and Tagline -->
+      <div class="footer-logo">
+        <h2>XPLORA</h2>
+        <p>EXPLORE BEYOND THE LIMIT</p>
+      </div>
+
+      <!-- Information Links -->
+      <div class="footer-column">
+        <h5><b>INFORMATION</b></h5>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">More Search</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Helpful Links -->
+      <div class="footer-column">
+        <h5><b>HELPFUL LINKS</b></h5>
+        <ul>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+        </ul>
+      </div>
+
+      <!-- Subscribe Section -->
+      <div class="footer-subscribe">
+        <p>SUBSCRIBE TO BE NOTIFIED ON UPDATES</p>
+        <button class="subscribe-btn">SUBSCRIBE</button>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+
 </body>
 </html>
