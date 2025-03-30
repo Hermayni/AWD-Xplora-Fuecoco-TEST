@@ -1,38 +1,40 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector(".form-inputs");
+    const form = document.getElementById("login-form");
 
-    form.addEventListener("submit", async function (event) {
-        event.preventDefault(); // Prevent default form submission
+    if (!form) {
+        console.error("Login form not found! Make sure the ID is correct.");
+        return;
+    }
 
-        const email = form.username.value.trim();  // Username should be email
-        const password = form.password.value.trim();
+    const API_URL_USERS = "https://demo-api-skills.vercel.app/api/UrbanExplorer/users";
 
-        if (!email || !password) {
-            alert("Please fill in all fields.");
-            return;
-        }
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form submission
 
-        try {
-            const response = await fetch("http://demo-api-skills.vercel.app/api/UrbanExplorer/users/login", { 
-                method: "POST", 
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email, password }) // Send credentials to API
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        axios.get(API_URL_USERS)
+            .then(response => {
+                const users = response.data; // Get user list
+                const user = users.find(u => u.name === username);
+
+                if (user) {
+                    alert("Logged in successfully! Off you go, Explorer!");
+                    
+                    localStorage.setItem("user", JSON.stringify({
+                        name: user.name,
+                        id: user.id
+                    }));
+
+                    window.location.replace("../../index.html");
+                } else {
+                    alert("Invalid username or password. Please try again.");
+                }
+            })
+            .catch(error => {
+                console.error("Login Error:", error);
+                alert("Login failed. Try again later.");
             });
-
-            const userData = await response.json();
-
-            if (response.ok) {
-                // Store user session (Example: LocalStorage)
-                localStorage.setItem("user", JSON.stringify(userData));
-
-                // Redirect to dashboard/home page
-                window.location.href = "/index.html";
-            } else {
-                alert(userData.message || "Invalid credentials.");
-            }
-        } catch (error) {
-            console.error("Error logging in:", error);
-            alert("An error occurred. Please try again later.");
-        }
     });
 });

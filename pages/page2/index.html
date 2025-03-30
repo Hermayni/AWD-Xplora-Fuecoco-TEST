@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xplora</title>
     <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico">
-     <!--Icon Library-->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-     <script src="https://kit.fontawesome.com/b93004a0bd.js"></script>
-     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
 
+    <!-- Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/b93004a0bd.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
 
-     <!-- Font -->
-       <link rel="preconnect" href="https://fonts.googleapis.com">
-       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-       <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- CDNJS -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -24,34 +24,38 @@
 </head>
 <body>
     <header class="nav">
-    <div class="right-nav">
-        <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-      
-    </div>
-    <div class="logo">
-        <img src="./assets/img/xploraLogo.png" alt="XPLORA Logo">
-    </div>
+        <div class="right-nav">
+            <div class="menu-toggle">
+                <a href="../../index.html"><i class="fas fa-home"></i></a>
+            </div>
+        </div>
+        <div class="logo">
+            <img src="./assets/img/xploraLogo.png" alt="XPLORA Logo">
+        </div>
     </header>
     
     <div class="container">
         <h1 class="syncopate-bold">WELCOME EXPLORER</h1>
 
-        <form class="form-inputs" action="#" method="post">
-          <input class="syncopate-regular" type="text" name="username" placeholder="USERNAME" required><br>
-          <input class="syncopate-regular" type="password" name="password" placeholder="PASSWORD" required><br>
-
+        <form class="form-inputs" id="login-form">
+          <input class="syncopate-regular" type="text" id="username" placeholder="USERNAME" required><br>
+          <input class="syncopate-regular" type="password" id="password" placeholder="PASSWORD" required><br>
+      
           <div class="buttons syncopate-regular">
-            <button type="submit">LOG IN</button>
-            <button type="button" onclick="window.location.href='../page3/index.html'">REGISTER</button>
+              <button type="submit">LOG IN</button>
+              <button type="button" onclick="window.location.href='../page3/index.html'">REGISTER</button>
           </div>
-        </form>
-      </div>
+      </form>
+      
+    </div>
 
     <footer>
         <p class="syncopate-regular">&copy; 2025 URBAN EXPLORER. ALL RIGHTS RESERVED.</p>
     </footer>
 
-
-    <script src="assets/js/scripts.js"></script>
+    <!-- Link JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="assets/js/scripts.js"></script> 
+  
 </body>
 </html>
