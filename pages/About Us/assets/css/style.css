@@ -21,7 +21,6 @@ body::before {
     z-index: -1;
 }
 
-
 header {
     display: flex;
     justify-content: space-between;
