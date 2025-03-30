@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Syncopate';
-    background: url('/pages/About Us/assets/img/V1.jpg') no-repeat center center fixed;
+    background: url('../../assets/img/V1.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
     margin: 0;
@@ -64,7 +64,7 @@ header {
     width: 300px;
     height: 300px;
     background: gray;
-    background: url('/pages/About Us/assets/img/V6.jpg') center;
+    background: url(../../assets/img/V6.jpg) center;
     background-size: cover;
     margin: auto;
     display: flex;
@@ -96,9 +96,9 @@ aside {
     background-position: center;
 }
 
-.social-icons .facebook { background-image: url('/pages/About Us/assets/img/V2.png'); } 
-.social-icons .instagram { background-image: url('/pages/About Us/assets/img/V3.webp'); }
-.social-icons .other { background-image: url('/pages/About Us/assets/img/V4.webp'); }
+.social-icons .facebook { background-image: url('../../assets/img/V2.png'); } 
+.social-icons .instagram { background-image: url('../../assets/img/V3.webp'); }
+.social-icons .other { background-image: url('../../assets/img/V4.webp'); }
 
 .learn-more {
     text-decoration: none;
@@ -110,7 +110,7 @@ aside {
     width: 100%;
     height: 200px;
     background: gray;
-    background: url('/pages/About Us/assets/img/V5.jpg');
+    background: url('../../assets/img/V5.jpg');
 }
 
 footer {
