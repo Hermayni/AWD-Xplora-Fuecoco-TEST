@@ -32,4 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".hero-text .btn").addEventListener("click", function () {
         handleAuthRedirect("../../pages/top-spots/index.html"); // Adjust the path as needed
     });
+
+    
+
 });
