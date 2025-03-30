@@ -64,6 +64,15 @@ header {
     color: white;
 }
 
+.menu-toggle  i {
+    color: #ffffff;
+}
+
+.menu-toggle :hover i {
+    color: #c0c0c0;
+}
+
+
 /* Updated Logo Styling */
 .logo {
     position: absolute;

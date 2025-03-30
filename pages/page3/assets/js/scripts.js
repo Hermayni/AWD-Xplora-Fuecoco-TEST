@@ -1,48 +1,49 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const registerForm = document.getElementById("register-form");
+    const form = document.getElementById("register-form");
 
-    registerForm.addEventListener("submit", async function (event) {
-        event.preventDefault(); // Prevent form from reloading the page
+    form.addEventListener("submit", async function (event) {
+        event.preventDefault(); // Prevent page refresh
 
-        // Get form values
-        const username = document.getElementById("username").value.trim();
+        // ✅ Correct field names to match API expectations
+        const name = document.getElementById("username").value.trim(); // Changed 'username' to 'name'
         const email = document.getElementById("email").value.trim();
-        const password = document.getElementById("password").value;
-        const confirmPassword = document.getElementById("confirm_password").value;
+        const password = document.getElementById("password").value.trim();
+        const confirmPassword = document.getElementById("confirm_password").value.trim();
 
-        // Check if passwords match
-        if (password !== confirmPassword) {
-            alert("Passwords do not match!");
+        // ✅ Ensure all fields are filled
+        if (!name || !email || !password || !confirmPassword) {
+            alert("Please fill out all fields.");
             return;
         }
 
-        // Prepare data for API request
-        const requestData = {
-            username: username,
-            email: email,
-            password: password,
-        };
+        // ✅ Check if passwords match
+        if (password !== confirmPassword) {
+            alert("Passwords do not match.");
+            return;
+        }
+
+        // ✅ Construct the correct data format
+        const requestData = { email, name, password };
+
+        console.log("Sending data:", requestData); // Debugging step
 
         try {
-            const response = await fetch("http://demo-api-skills.vercel.app/api/UrbanExplorer/users", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(requestData),
-            });
+            // ✅ Send API Request
+            const response = await axios.post(
+                "https://demo-api-skills.vercel.app/api/UrbanExplorer/users",
+                requestData,
+                { headers: { "Content-Type": "application/json" } }
+            );
 
-            const data = await response.json();
+            alert("Signup successful!");
+            console.log("Response:", response.data);
 
-            if (response.ok) {
-                alert("Registration successful! Redirecting to login page...");
-                window.location.href = "../../../page2/index.html"; // Redirect to login page
-            } else {
-                alert(data.message || "Registration failed. Please try again.");
-            }
+              // ✅ Redirect to login page after successful signup
+            window.location.href = "/pages/page2/index.html"; 
+
         } catch (error) {
-            console.error("Error:", error);
-            alert("An error occurred. Please try again later.");
+            console.error("Signup failed:", error.response ? error.response.data : error.message);
+            alert("Signup failed: " + (error.response?.data?.error || "Unknown error"));
         }
     });
 });
