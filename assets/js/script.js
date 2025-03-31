@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function handleAuthRedirect(targetPage) {
         if (!isUserLoggedIn()) {
             alert("Please log in to continue.");
-            window.location.href = "Hermayni/AWD-Xplora-Fuecoco-TEST/pages/page2/index.html"; // Redirect to login page
+            window.location.href = "../../pages/page2/index.html"; // Redirect to login page
         } else {
             window.location.href = targetPage; // Redirect to the intended page
         }
@@ -26,12 +26,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // Profile Icon Click - Redirect if logged in, otherwise go to login
     document.querySelector(".profile-icon").addEventListener("click", function () {
         handleAuthRedirect("../../pages/profile/index.html"); // Adjust the path as needed
-        window.location.href = "./../pages/page2/index.html" ; // Adjust the path as needed
     });
 
     // "Click to View Top Spots" Button - Redirect if logged in, otherwise go to login
     document.querySelector(".hero-text .btn").addEventListener("click", function () {
-        handleAuthRedirect("../../pages/top-spots/index.html"); // Adjust the path as needed
-        window.location.href = "./../pages/page2/index.html" ; // Adjust the path as needed
+        handleAuthRedirect("../../pages/Spots/index.html"); // Adjust the path as needed
     });
 });
