@@ -3,8 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
         { user: "Alice", content: "Exploring the city today! #UrbanAdventure", img: "pages\Spots\assets\img\hh.jpg" },
         { user: "Bob", content: "Just found an amazing hidden coffee shop! ☕",},
         { user: "Charlie", content: "The architecture downtown is stunning! 🏙️",},
-        { user: "Diana", content: "Loving the street art in this area 🎨",},
-        { user: "Eve", content: "Walking through history in the old district!",}
     ];
 
     // Load existing posts without images
@@ -87,3 +85,4 @@ function updateTopPosts() {
         topPostsContainer.appendChild(clonedPost);
     });
 }
+
