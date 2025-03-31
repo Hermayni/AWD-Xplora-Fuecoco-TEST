@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function handleAuthRedirect(targetPage) {
         if (!isUserLoggedIn()) {
             alert("Please log in to continue.");
-            window.location.href = "./../pages/pages2/index.html"; // Redirect to login page
+            window.location.href = "/pages/pages2/index.html"; // Redirect to login page
         } else {
             window.location.href = targetPage; // Redirect to the intended page
         }
