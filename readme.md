@@ -1,77 +1,52 @@
-<a name="readme-top">
 
 <br/>
 
 <br />
 <div align="center">
-  <a href="https://github.com/zyx-0314/">
-  <!-- TODO: If you want to add logo or banner you can add it here -->
-    <img src="./assets/img/nyebe_white.png" alt="Nyebe" width="130" height="100">
+  <a href="https://github.com/Hermayni/AWD-Xplora-Fuecoco">
+    <img src="./assets/img/Fuecoco Logo (2).png" alt="Fuecoco" width="330" height="300">
   </a>
-<!-- TODO: Change Title to the name of the title of your Project -->
-  <h3 align="center">Title</h3>
+  <h3 align="center" style="font-size: 32px;">Urban Explorer: Xplora</h3>
 </div>
-<!-- TODO: Make a short description -->
 <div align="center">
-  Short Description. (Optional)
+   Xplora is a modern city guide designed for urban explorers, offering personalized recommendations,
+ <br> interactive maps, and community-driven rankings of local businesses, tourist spots, and tambayans.
+  <br> With user account creation, spot registration, and AI-powered suggestions, it aims to revolutionize
+   <br>urban exploration with a sleek and innovative experience.
 </div>
 
 <br />
 
-<!-- TODO: Change the zyx-0314 into your github username  -->
-<!-- TODO: Change the WD-Template-Project into the same name of your folder -->
-![](https://visit-counter.vercel.app/counter.png?page=zyx-0314/WD-Template-Project)
+![](https://visit-counter.vercel.app/counter.png?page=Hermayni/AWD-Xplora-Fuecoco)
 
-[![wakatime](https://wakatime.com/badge/user/018dd99a-4985-4f98-8216-6ca6fe2ce0f8/project/63501637-9a31-42f0-960d-4d0ab47977f8.svg)](https://wakatime.com/badge/user/018dd99a-4985-4f98-8216-6ca6fe2ce0f8/project/63501637-9a31-42f0-960d-4d0ab47977f8)
+[![wakatime](https://wakatime.com/badge/user/a2072801-af1c-46f2-bf22-b5174fd65c38.svg)](https://wakatime.com/badge/user/018dd99a-4985-4f98-8216-6ca6fe2ce0f8/project/63501637-9a31-42f0-960d-4d0ab47977f8)
 
 ---
-
-<br />
-<br />
-
-<!-- TODO: If you want to add more layers for your readme -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#overview">Overview</a>
-      <ol>
-        <li>
-          <a href="#key-components">Key Components</a>
-        </li>
-        <li>
-          <a href="#technology">Technology</a>
-        </li>
-      </ol>
-    </li>
-    <li>
-      <a href="#rule,-practices-and-principles">Rules, Practices and Principles</a>
-    </li>
-    <li>
-      <a href="#resources">Resources</a>
-    </li>
-  </ol>
-</details>
-
----
-
 ## Overview
+Xplora is an innovative web platform designed for urban professionals, tourists, and local adventurers who love discovering hidden gems, trendy cafes, and cultural hotspots. It provides interactive maps, personalized recommendations, and a community-driven ranking system to enhance city exploration.
 
-<!-- TODO: To be changed -->
-<!-- The following are just sample -->
-Description of the project in details.
+<br>
 
-Guiding Question:
-- What is the project
-- Whats the purpose
-- What are key components
-- What technology used and how it is used
+Key Features:
+
+- ✅ User Accounts – Personalized profiles for saving favorites and tracking visits.
+- ✅ Local Spot Registration – Businesses, tourist spots, and tambayans can register and be ranked.
+- ✅ Interactive Maps – Easy navigation to curated recommendations.
+- ✅ Community Reviews & Rankings – Users can rate and review places for authenticity.
+- ✅ AI-Powered Suggestions – Tailored recommendations based on user interests.
+<br>
+<br>
+
+Target Audience:
+<br>
+🔹 Young professionals, tourists, and local explorers looking for unique city experiences.
+<br>
+With a sleek, modern design (charcoal, teal, white) and a mission to revolutionize urban exploration, Xplora transforms the way users engage with their city. 🚀
 
 ### Key Components
-<!-- TODO: List of Key Components -->
-<!-- The following are just sample -->
-- MultiPage Website/Single Page Website
-- Parallax transition
+
+- MultiPage Website
+- Responsive
 - Transactional
 
 ### Technology
@@ -80,43 +55,10 @@ Guiding Question:
 ![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white)
 
-## Rules, Practices and Principles
-1. Always use `WD-` in the front of the Title of the Project for the Subject followed by your custom naming.
-2. Do not rename any .html files; always use `index.html` as the filename.
-3. Place Files in their respective folders.
-4. All file naming are in camel case.
-   - Camel case is naming format where there is no white space in separation of each words, the first word is in all lower case while the succeding words first letter are in upper followed by lower cased letters.
-   - ex.: buttonAnimatedStyle.css
-5. Use only `External CSS`.
-6. Renaming of Pages folder names are a must, and relates to what it is doing or data it holding.
-7. File Structure to follow below.
-
-```
-WD-ProjectName
-└─ assets
-|   └─ css
-|   |   └─ style.css
-|   └─ img
-|   |   └─ fileWith.jpeg/.jpg/.webp/.png
-|   └─ js
-|       └─ script.js
-└─ pages
-|  └─ pageName
-|     └─ assets
-|     |  └─ css
-|     |  |  └─ style.css
-|     |  └─ img
-|     |  |  └─ fileWith.jpeg/.jpg/.webp/.png
-|     |  └─ js
-|     |     └─ script.js
-|     └─ index.html
-└─ index.html
-└─ readme.md
-```
 
 ## Resources
 
-<!-- TODO: Add References -->
+
 | Title | Purpose | Link |
 |-|-|-|
 | Sample Title | Sample purpose would be here like this and this is the example of what it is. | trykolang.com |
