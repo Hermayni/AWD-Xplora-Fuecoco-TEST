@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Hermayni/AWD-Xplora-Fuecoco">
-    <img src="./assets/img/Fuecoco Logo (2).png" alt="Fuecoco" width="330" height="300">
+    <img src="./assets/img/Fuecoco Logo.png" alt="Fuecoco" width="330" height="300">
   </a>
   <h3 align="center" style="font-size: 32px;">Urban Explorer: Xplora</h3>
 </div>
