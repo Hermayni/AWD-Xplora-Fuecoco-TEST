@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         const currentUser = JSON.parse(localStorage.getItem('user'));
         if (!currentUser || !currentUser.id) {
-            window.location.href = '/index.html';
+            window.location.replace('/index.html');
             return;
         }
 
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log('User logged out, localStorage cleared');
         
         // Redirect to main index page
-        window.location.href = '/index.html';
+        window.location.replace('/index.html');
     }
     
     // Update profile icon based on login status
@@ -59,9 +59,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Profile icon click handler
     function handleProfileClick() {
         if (isUserLoggedIn()) {
-            window.location.href = "../../pages/profile/index.html";
+            window.location.replace('/pages/profile/index.html');
         } else {
-            window.location.href = "../../pages/page2/index.html";
+            window.location.replace('/pages/page2/index.html');
         }
     }
     

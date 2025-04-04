@@ -440,7 +440,7 @@ function handleLogout() {
     
     const currentUser = JSON.parse(localStorage.getItem('user'));
     if (!currentUser || !currentUser.id) {
-        window.location.href = '/index.html';
+        window.location.replace('/index.html');
         return;
     }
 
@@ -449,14 +449,14 @@ function handleLogout() {
     console.log('User logged out, localStorage cleared');
     
     // Redirect to main index page
-    window.location.href = './index.html';
+    window.location.replace('/index.html');
 }
 
 // Check authentication for protected routes
 function checkAuth() {
     const currentUser = JSON.parse(localStorage.getItem('user'));
     if (!currentUser || !currentUser.id) {
-        window.location.href = './pages/page2/index.html';
+        window.location.replace('/pages/page2/index.html');
         return false;
     }
     return true;
@@ -497,9 +497,9 @@ document.addEventListener("DOMContentLoaded", function () {
     function handleAuthRedirect(targetPage) {
         if (!isUserLoggedIn()) {
             alert("Please login to continue.");
-            window.location.href = "../../pages/page2/index.html"; // Redirect to login page
+            window.location.replace("/pages/page2/index.html"); // Redirect to login page
         } else {
-            window.location.href = targetPage; // Redirect to the intended page
+            window.location.replace(targetPage); // Redirect to the intended page
         }
     }
 
