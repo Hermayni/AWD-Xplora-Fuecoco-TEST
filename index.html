@@ -278,7 +278,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // "Click to View Top Spots" Button - Redirect if logged in, otherwise go to login
     document.querySelector(".hero-text .btn").addEventListener("click", function () {
-        handleAuthRedirect("./pages/Spots/index.html"); // Adjust the path as needed
+        // handleAuthRedirect("./pages/Spots/index.html"); // Adjust the path as needed
+        window.location.replace("./pages/Spots/index.html")
     });
 
     // Update profile icon based on login status

@@ -456,7 +456,7 @@ function handleLogout() {
 function checkAuth() {
     const currentUser = JSON.parse(localStorage.getItem('user'));
     if (!currentUser || !currentUser.id) {
-        window.location.href = '/pages/Login/index.html';
+        window.location.href = '/pages/page2/index.html';
         return false;
     }
     return true;
