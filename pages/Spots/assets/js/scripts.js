@@ -440,7 +440,7 @@ function handleLogout() {
     
     const currentUser = JSON.parse(localStorage.getItem('user'));
     if (!currentUser || !currentUser.id) {
-        window.location.replace('/index.html');
+        window.location.href = '/index.html';
         return;
     }
 
@@ -449,17 +449,32 @@ function handleLogout() {
     console.log('User logged out, localStorage cleared');
     
     // Redirect to main index page
-    window.location.replace('/index.html');
+    window.location.href = './index.html';
 }
 
 // Check authentication for protected routes
 function checkAuth() {
     const currentUser = JSON.parse(localStorage.getItem('user'));
     if (!currentUser || !currentUser.id) {
-        window.location.replace('/pages/page2/index.html');
+        window.location.href = './pages/page2/index.html';
         return false;
     }
     return true;
+}
+
+// Function to check if the user is logged in
+function isUserLoggedIn() {
+    return localStorage.getItem("user") !== null;
+}
+
+// Redirect to login page if user is not logged in
+function handleAuthRedirect(targetPage) {
+    if (!isUserLoggedIn()) {
+        alert("Please login to continue.");
+        window.location.href = "../../pages/page2/index.html"; // Redirect to login page
+    } else {
+        window.location.href = targetPage; // Redirect to the intended page
+    }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -486,21 +501,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 navLinks.classList.remove('active');
             });
         });
-    }
-
-    // Function to check if the user is logged in
-    function isUserLoggedIn() {
-        return localStorage.getItem("user") !== null;
-    }
-
-    // Redirect to login page if user is not logged in
-    function handleAuthRedirect(targetPage) {
-        if (!isUserLoggedIn()) {
-            alert("Please login to continue.");
-            window.location.replace("/pages/page2/index.html"); // Redirect to login page
-        } else {
-            window.location.replace(targetPage); // Redirect to the intended page
-        }
     }
 
     // Profile Icon Click - Redirect if logged in, otherwise go to login

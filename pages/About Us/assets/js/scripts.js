@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         const currentUser = JSON.parse(localStorage.getItem('user'));
         if (!currentUser || !currentUser.id) {
-            window.location.replace('/index.html');
+            window.location.href = '/index.html';
             return;
         }
 
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log('User logged out, localStorage cleared');
         
         // Redirect to main index page
-        window.location.replace('/index.html');
+        window.location.href = '/index.html';
     }
     
     // Update profile icon based on login status
