@@ -131,7 +131,7 @@
 
 
 body {
-    background: url("../../pages/Spots/assets/img/spots_bg.jpg") center center / cover;
+    background: url("../../assets/img/spots_bg.jpg") center center / cover;
     background-size: cover;
     min-height: 100vh;
     overflow-x: hidden;
