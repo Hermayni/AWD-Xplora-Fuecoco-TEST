@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("Response:", response.data);
 
               // ✅ Redirect to login page after successful signup
-            window.location.href = "/pages/page2/index.html"; 
+            window.location.href = "../page2/index.html"; 
 
         } catch (error) {
             console.error("Signup failed:", error.response ? error.response.data : error.message);
