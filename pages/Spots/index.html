@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
-
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xplora</title>
     <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico">
-     <!--Icon Library-->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-     <script src="https://kit.fontawesome.com/b93004a0bd.js"></script>
-     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/b93004a0bd.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
 
 
-     <!-- Font -->
-       <link rel="preconnect" href="https://fonts.googleapis.com">
-       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-       <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+
 
     <!-- CDNJS -->
     <link rel="stylesheet" href="/pages/Spots/assets/css/style.css">
@@ -48,82 +48,108 @@
     </header>
 
     <main>
-        <section class ="hero" id="post-section">
+        <section class="hero" id="post-section">
             <h1 class="syncopate-bold">Spots Feed</h1>
-            <div class="search-container">
-                <i class="fa fa-search search-icon"></i>
-                <input type="text" id="searchBar" placeholder="Search what's hot!" onkeyup="searchPosts()">
-            </div>
             <hr class="section-divider">
-            <input type="text" id="userName" placeholder="Your name">
-            <textarea id="postContent" placeholder="What's on your mind?"></textarea>
-            <input type="file" id="postImage" accept="image/*">
-            <img id="imagePreview" style="display: none; max-width: 100px; margin-top: 10px;">
-            <button id="postButton" onclick="addPost()">Post</button>
+
+            <!-- Post Form -->
+            <h2 class="syncopate-bold">SHARE A PLACE</h2>
+            <form id="postForm">
+                 <!-- This hidden input will automatically be filled with the userId from localStorage -->
+                <input type="hidden" id="ownerId">
+
+                <!-- This input is for the place name -->
+                <input type="text" id="name" placeholder="Place Name" required>
+
+                <!-- Input fields for category, location, and description -->
+                <select id="category" required>
+                    <option value="" disabled selected>Select Category</option>
+                    <option value="Cafes">Cafes</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Food Spots">Food Spots</option>
+                    <option value="Local Events">Local Events</option>
+                    <option value="Neighborhood">Neighborhood</option>
+                </select>
+                <input type="text" id="location" placeholder="Location" required>
+                <textarea id="description" placeholder="Description" required></textarea>
+
+                <!-- Submit button to create the post -->
+                <button id="postButton" type="submit">Post</button>
+            </form>
 
             <hr class="section-divider">
+
             <h2 class="syncopate-bold">Feed</h2>
-        <div id="feed"></div>
+           
+            <div class="feed" id="feed">
+                <!-- Posts will be dynamically added here -->
+            </div>
 
-        <hr class="section-divider">
+            <!-- Category Filtering Section -->
+            <div class="category-filter">
+                <button class="filter-btn active" onclick="filterPosts('All Places')">All Places</button>
+                <button class="filter-btn" onclick="filterPosts('Cafes')">Cafes</button>
+                <button class="filter-btn" onclick="filterPosts('Entertainment')">Entertainment</button>
+                <button class="filter-btn" onclick="filterPosts('Food Spots')">Food Spots</button>
+                <button class="filter-btn" onclick="filterPosts('Local Events')">Local Events</button>
+                <button class="filter-btn" onclick="filterPosts('Neighborhood')">Neighborhood</button>
+            </div>
 
-        <h2 class="syncopate-bold">Top Liked Posts</h2>
-        <div id="topPosts"></div>
+            <hr class="section-divider">
+
+            <h2 class="syncopate-bold">Top Liked Posts</h2>
+            <div id="topPosts"></div>
+
+
         </section>
-
-        
     </main>
 
 
-<hr class="section-divider">
+    <hr class="section-divider">
 
 
-<footer class="footer">
-    <div class="footer-container">
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Logo and Tagline -->
+            <div class="footer-logo">
+                <h2>XPLORA</h2>
+                <p>EXPLORE BEYOND THE LIMIT</p>
+            </div>
 
 
-      <!-- Logo and Tagline -->
-      <div class="footer-logo">
-        <h2>XPLORA</h2>
-        <p>EXPLORE BEYOND THE LIMIT</p>
-      </div>
+            <!-- Information Links -->
+            <div class="footer-column">
+                <h5><b>INFORMATION</b></h5>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">More Search</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
 
 
-      <!-- Information Links -->
-      <div class="footer-column">
-        <h5><b>INFORMATION</b></h5>
-        <ul>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">More Search</a></li>
-          <li><a href="#">Events</a></li>
-          <li><a href="#">Blog</a></li>
-        </ul>
-      </div>
+            <!-- Helpful Links -->
+            <div class="footer-column">
+                <h5><b>HELPFUL LINKS</b></h5>
+                <ul>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
 
 
-      <!-- Helpful Links -->
-      <div class="footer-column">
-        <h5><b>HELPFUL LINKS</b></h5>
-        <ul>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Support</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms & Conditions</a></li>
-        </ul>
-      </div>
+            <!-- Subscribe Section -->
+            <div class="footer-subscribe">
+                <p>SUBSCRIBE TO BE NOTIFIED ON UPDATES</p>
+                <button class="subscribe-btn">SUBSCRIBE</button>
+            </div>
+        </div>
+    </footer>
 
 
-      <!-- Subscribe Section -->
-      <div class="footer-subscribe">
-        <p>SUBSCRIBE TO BE NOTIFIED ON UPDATES</p>
-        <button class="subscribe-btn">SUBSCRIBE</button>
-      </div>
-
-
-    </div>
-  </footer>
-
-  <script src="/pages/Spots/assets/js/scripts.js"></script>
+    <script src="/pages/Spots/assets/js/scripts.js"></script> <!-- Ensure this file exists and is functional -->
 </body>
-
 </html>

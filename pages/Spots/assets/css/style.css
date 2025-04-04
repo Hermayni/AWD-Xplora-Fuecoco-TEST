@@ -35,12 +35,100 @@
 
 
 .section-divider {
-    border: none;
-    height: 2px;
-    background-color: #ffffff; /* White color */
-    width: 100%;               /* Full width */
-    margin: 60px 0;            /* Optional spacing */
+    height: 1px;
+    background: #ddd;
+    margin: 2rem 0;
+    width: 100%;
 }
+
+.post-card-postplace-name {
+    font-family: "Syncopate";
+    font-weight: 700;
+    padding: 10px;
+    color: #fff;
+    background-color: #2b2b2bd2;
+    height: 10px;
+    margin-bottom: 0rem;
+}
+
+.post-card-place-description {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #3a3a3a;
+    padding: 10px;
+    background-color: #e6e6e6;
+    height: 80px;
+    font-size: 13px;
+}
+
+.category-filter {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.filter-btn:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.post-body {
+    box-shadow: 0px 1px 7px 1px #00000093;
+}
+
+
+.bookmark-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.bookmark-btn i {
+    color: black;
+}
+
+.reaction-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.reaction-btn i {
+    color: rgb(0, 0, 0);
+}
+
+.ratings {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+
+
+
 
 body {
     background: url("/pages/Spots/assets/img/spots_bg.jpg") center center / cover;
@@ -82,38 +170,61 @@ header {
     z-index: 100;
 }
 
-
-.search-container {
-    display: flex;
-    align-items: center;
-    background: #444;
-    padding: 10px 20px;
-    border-radius: 50px;
-    width: 400px;
-    justify-content: start;
-}
-
-
-.search-icon {
-    color: white;
-    font-size: 20px;
-    margin-right: 10px;
-}
-
-#searchBar {
-    width: 80%;
+.post-options-menu {
+    display: none; /* Hide the options menu by default */
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    background-color: white;
+    border: 1px solid #ddd;
     padding: 10px;
-    margin-top: 10px;
-    border-radius: 30px;
-    background: transparent;
-    border: none;
-    outline: none;
-    color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-#searchBar::placeholder {
+.delete-btn {
+    background-color: #ff4d4d;
     color: white;
-    opacity: 0.7;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #ff1a1a;
+}
+
+/* Show the options menu when the "more-options" button is clicked */
+.post-header.active .post-options-menu {
+    display: block;
+}
+
+
+.feed {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.feed h2 {
+    margin-bottom: 20px;
+}
+
+/* Post Cards */
+.post-card {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    order: 2;
+}
+
+#categoryFilter {
+    margin-bottom: 10px;
 }
 
 #post-section {
@@ -122,12 +233,55 @@ header {
     flex-direction: column;
     align-items: center;
 }
+form {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers all elements */
+    gap: 3px; /* Adds spacing between inputs */
+}
 
-#userName,#postContent, #postImage {
-    width: 80%;
-    height: 60px;
+input, textarea {
+    width: 100%; /* Makes input fields full width */
+    max-width: 500px; /* Adjust based on preference */
     padding: 10px;
-    border-radius: 30px;
+    border-radius: 15px;
+    border: none;
+    font-size: 16px;
+}
+
+textarea {
+    height: 100px; /* Adjust height for better spacing */
+    resize: none;
+}
+#postCreatorName,  #name, #location{
+    height: 45px;
+    padding: 10px;
+    border-radius: 45px;
+    color: rgb(150, 150, 150);
+    margin-bottom: 10px;
+}
+#category {
+    height: 45px;
+    padding: 4px;
+    width: 400px;
+    border-radius: 45px;
+    color: rgb(150, 150, 150);
+    margin-bottom: 10px;
+}
+
+#description {
+    height: 100px;
+    padding: 10px;
+    border-radius: 15px;
+    color: rgb(150, 150, 150);
+    margin-bottom: 10px;
+}
+#postContent {
+    width: 80%;
+    height: 130px;
+    padding: 10px;
+    border-radius: 20px;
     color: black;
 }
 
@@ -139,25 +293,62 @@ button {
     
 }
 
-.post {
+.post-card {
     background: white;
-    padding: 35px;
-    margin: 10px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 9px;
+    margin: 20px auto;
     width: 80%;
-    border-radius: 60px;
+    border-radius: 20px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     text-align: left;
     color: black;
 }
 
-.post img {
-    width: 100%;
-    max-height: 300px;
-    object-fit: cover;
-    border-radius: 30px;
-    margin-bottom: 10px;
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    height: 70px;
+    position: relative;
 }
 
+.fas.fa-user-circle {
+    font-size: 40px;
+    margin-left: 10px;
+}
+
+.fas.fa-ellipsis-h.more-options{
+    font-size: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.user-info i {
+    font-size: 20px;
+    margin-right: 8px;
+}
+
+.post-meta {
+    display: flex;
+    gap: 5px;
+}
+
+.post-card-location,
+.post-card-category {
+    background: #d1d1d1;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+}
 #postImage {
     border-radius: 30px;
 }
@@ -175,9 +366,10 @@ button {
 }
 
 #topPosts {
-    padding: 15px;
-    border-radius: 10px;
-    margin-top: 10px;
+    margin-bottom: 60px;
+    padding-bottom: 30px;
+    position: relative;
+    z-index: 2;
 }
 
 #post-section {
@@ -520,79 +712,100 @@ aside h2 {
 
 /* Footer Section */
 .footer {
+    position: relative;
+    z-index: 1;
+    margin-top: 60px;
+    padding-top: 30px;
     background-color: #59595900;
     color: #fff;
-    padding: 0px 50px;
+    padding: 30px 50px;
     font-family: Arial, sans-serif;
     font-family: "syncopate";
     text-align: center;
-    width: 100%;               /* Full width */
-  }
- 
-  .footer-container {
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-container {
     display: flex;
-    justify-content: space-evenly; /* Even spacing */
+    justify-content: space-evenly;
     align-items: flex-start;
     flex-wrap: wrap;
-  }
- 
-  .footer-logo h2 {
+    padding: 20px 0;
+    gap: 30px;
+}
+
+.footer-logo {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.footer-subscribe {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.footer-logo h2 {
     font-size: 30px;
     font-weight: bold;
-  }
- 
-  .footer-logo p {
+}
+
+.footer-logo p {
     font-size: 14px;
     margin-top: 8px;
     color: #ccc;
-  }
- 
-  .footer-column h3 {
+}
+
+.footer-column h3 {
     font-size: 16px;
     margin-bottom: 15px;
-  }
- 
-  .footer-column ul {
+}
+
+.footer-column ul {
     list-style: none;
     padding: 0;
-  }
- 
-  .footer-column ul li {
+}
+
+.footer-column ul li {
     margin-bottom: 10px;
-  }
- 
-  .footer-column ul li a {
+}
+
+.footer-column ul li a {
     text-decoration: none;
     color: #ccc;
     transition: color 0.3s;
-  }
- 
-  .footer-column ul li a:hover {
+}
+
+.footer-column ul li a:hover {
     color: #fff;
-  }
- 
-  .footer-subscribe {
-    max-width: 250px;
-  }
- 
-  .footer-subscribe p {
+}
+
+.footer-subscribe p {
     font-size: 14px;
     margin-bottom: 15px;
     color: #ccc;
-  }
- 
-  .subscribe-btn {
+}
+
+.subscribe-btn {
     background-color: #ccc;
     color: #000;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
     font-weight: bold;
-  }
- 
-  .subscribe-btn:hover {
+}
+
+.subscribe-btn:hover {
     background-color: #fff;
-  }
+}
 
 /* Media Queries for Responsiveness */
 
@@ -629,6 +842,46 @@ aside h2 {
     footer {
         font-size: 10px;
         padding: 8px;
+    }
+    main {
+        min-height: calc(100vh - 300px);
+        padding-bottom: 400px;
+    }
+    .footer {
+        padding: 0px 20px;
+    }
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .footer-logo,
+    .footer-column,
+    .footer-subscribe {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .footer-column ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .section-divider {
+        margin: 40px 0;
+    }
+    #topPosts {
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+    }
+    .category-filter {
+        padding: 5px;
+        margin: 10px auto;
+    }
+    .category-filter button {
+        padding: 6px 12px;
+        font-size: 12px;
     }
 }
 
@@ -737,5 +990,51 @@ aside h2 {
     footer {
         font-size: 16px;
         padding: 14px;
+    }
+}
+
+/* Main Content */
+main {
+    min-height: calc(100vh - 200px);
+    padding-bottom: 300px;
+    position: relative;
+    width: 100%;
+}
+
+/* Top Posts Section */
+#topPosts {
+    margin-bottom: 40px;
+}
+
+/* Category Filter */
+.category-filter {
+    margin-bottom: 40px;
+}
+
+@media screen and (min-width: 376px) and (max-width: 1024px) {
+    main {
+        min-height: calc(100vh - 250px);
+        padding-bottom: 350px;
+    }
+    #topPosts {
+        margin-bottom: 35px;
+    }
+    .category-filter {
+        margin-bottom: 35px;
+    }
+}
+
+@media screen and (min-width: 376px) and (max-width: 1024px) {
+    .footer-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .footer-logo,
+    .footer-column,
+    .footer-subscribe {
+        flex: 1 1 300px;
+        max-width: 300px;
     }
 }

@@ -31,6 +31,28 @@
 
 .profile-icon {
     color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.profile-icon:hover {
+    color: #a7a7a7;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.profile-icon i {
+    transition: transform 0.3s ease;
+}
+
+.profile-icon:hover i {
+    transform: scale(1.1);
 }
 
 
@@ -481,113 +503,573 @@ aside h2 {
 @media screen and (max-width: 375px) {
     body {
         font-size: 14px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
     }
+    
     header {
         flex-direction: column;
         padding: 10px;
+        height: auto;
     }
+    
     .logo {
-        font-size: 22px;
+        position: relative;
+        padding-top: 0.5rem;
+        margin-bottom: 10px;
     }
+    
+    .logo img {
+        max-height: 30px;
+    }
+    
     nav {
         width: 100%;
+        margin-top: 10px;
     }
-    .auth-links {
-        width: 100%;
-        justify-content: center;
+    
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
     }
+    
+    .nav-links li {
+        margin: 5px 0;
+    }
+    
+    .profile-icon {
+        margin-top: 10px;
+    }
+    
     .hero {
-        height: auto;
-        padding: 50px 20px;
+        padding: 80px 15px 30px;
+        margin-top: 20px;
     }
-    .hero-content {
-        width: 90%;
+    
+    .hero h1 {
+        font-size: 24px;
     }
-    .explore-btn {
+    
+    .xplora_logo, .fuecoco_logo {
+        height: 120px;
+        padding: 20px;
+    }
+    
+    .hero p {
         font-size: 14px;
-        padding: 10px 20px;
+        padding: 0 10px;
+        margin: 15px 0;
     }
-    footer {
-        font-size: 10px;
-        padding: 8px;
+    
+    .link-box {
+        width: 220px;
+        height: 50px;
+        font-size: 14px;
+        padding: 10px;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+    
+    .container h1 {
+        font-size: 22px;
+        margin: 20px 0;
+    }
+    
+    .team {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .member {
+        width: 100%;
+        max-width: 280px;
+        padding: 15px;
+    }
+    
+    .member img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .member h3 {
+        font-size: 16px;
+    }
+    
+    .member p {
+        font-size: 14px;
+    }
+    
+    aside {
+        padding: 20px 15px;
+    }
+    
+    aside h2 {
+        font-size: 20px;
+    }
+    
+    .social-icons {
+        gap: 15px;
+    }
+    
+    .social-icons a {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .contact-section {
+        padding: 20px 15px;
+    }
+    
+    .contact-section h2 {
+        font-size: 24px;
+    }
+    
+    .contact-box {
+        padding: 15px;
+        max-width: 100%;
+    }
+    
+    .contact-item {
+        margin: 10px 0;
+    }
+    
+    .contact-icon {
+        font-size: 20px;
+    }
+    
+    .contact-item p {
+        font-size: 14px;
+    }
+    
+    .section-divider {
+        margin: 30px 0;
+    }
+    
+    .footer {
+        padding: 20px 15px;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .footer-logo, .footer-column, .footer-subscribe {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .footer-logo h2 {
+        font-size: 24px;
+    }
+    
+    .footer-logo p {
+        font-size: 12px;
+    }
+    
+    .footer-column h3 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    
+    .footer-column ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .footer-column ul li {
+        margin: 0;
+    }
+    
+    .footer-subscribe p {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    
+    .subscribe-btn {
+        padding: 8px 16px;
+        font-size: 14px;
     }
 }
-
-
 
 /* iPad - 1024x768 */
 @media screen and (max-width: 1024px) {
     body {
         font-size: 16px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
     }
+    
     header {
         flex-direction: column;
         padding: 15px;
+        height: auto;
     }
+    
     .logo {
-        font-size: 26px;
+        position: relative;
+        padding-top: 0.5rem;
+        margin-bottom: 10px;
     }
+    
+    .logo img {
+        max-height: 40px;
+    }
+    
     nav {
         width: 100%;
+        margin-top: 10px;
     }
-
+    
+    .nav-links {
+        justify-content: center;
+    }
+    
+    .nav-links li {
+        margin: 0 15px;
+    }
+    
+    .profile-icon {
+        margin-top: 10px;
+    }
+    
     .hero {
-        height: 100vh;  /* Ensures full screen height */
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .hero-content {
-        width: 80%;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .explore-btn {
-        font-size: 18px;
-        padding: 15px 30px;
+        padding: 100px 30px 40px;
         margin-top: 20px;
     }
-
-    footer {
-        font-size: 12px;
-        padding: 10px;
+    
+    .hero h1 {
+        font-size: 28px;
+    }
+    
+    .xplora_logo, .fuecoco_logo {
+        height: 150px;
+        padding: 30px;
+    }
+    
+    .hero p {
+        font-size: 16px;
+        padding: 0 20px;
+        margin: 20px 0;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .link-box {
+        width: 240px;
+        height: 60px;
+        font-size: 16px;
+        padding: 15px;
+    }
+    
+    .container {
+        max-width: 90%;
+        padding: 0 20px;
+    }
+    
+    .container h1 {
+        font-size: 26px;
+        margin: 30px 0;
+    }
+    
+    .team {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .member {
+        width: calc(50% - 20px);
+        max-width: 300px;
+        padding: 20px;
+    }
+    
+    .member img {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .member h3 {
+        font-size: 18px;
+    }
+    
+    .member p {
+        font-size: 16px;
+    }
+    
+    aside {
+        padding: 30px 20px;
+    }
+    
+    aside h2 {
+        font-size: 24px;
+    }
+    
+    .social-icons {
+        gap: 20px;
+    }
+    
+    .social-icons a {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .contact-section {
+        padding: 30px 20px;
+    }
+    
+    .contact-section h2 {
+        font-size: 28px;
+    }
+    
+    .contact-box {
+        padding: 20px;
+        max-width: 500px;
+    }
+    
+    .contact-item {
+        margin: 15px 0;
+    }
+    
+    .contact-icon {
+        font-size: 22px;
+    }
+    
+    .contact-item p {
+        font-size: 16px;
+    }
+    
+    .section-divider {
+        margin: 40px 0;
+    }
+    
+    .footer {
+        padding: 30px 20px;
+    }
+    
+    .footer-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+    
+    .footer-logo, .footer-column, .footer-subscribe {
+        flex: 1 1 300px;
+        max-width: 300px;
+    }
+    
+    .footer-logo h2 {
+        font-size: 28px;
+    }
+    
+    .footer-logo p {
+        font-size: 14px;
+    }
+    
+    .footer-column h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    
+    .footer-column ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .footer-column ul li {
+        margin: 0;
+    }
+    
+    .footer-subscribe p {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    
+    .subscribe-btn {
+        padding: 10px 20px;
+        font-size: 16px;
     }
 }
-
 
 /* Laptop - 1440x900 */
 @media screen and (max-width: 1440px) {
     body {
         font-size: 18px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
     }
+    
     header {
         padding: 20px;
     }
+    
     .logo {
-        font-size: 30px;
+        position: absolute;
+        padding-top: 1rem;
     }
+    
+    .logo img {
+        max-height: 45px;
+    }
+    
     nav {
         width: 100%;
     }
+    
     .hero {
-        padding: 100px 60px;
+        padding: 120px 40px 50px;
     }
-    .hero-content {
-        max-width: 70%;
+    
+    .hero h1 {
+        font-size: 32px;
     }
-    .explore-btn {
+    
+    .xplora_logo, .fuecoco_logo {
+        height: 180px;
+        padding: 40px;
+    }
+    
+    .hero p {
         font-size: 18px;
-        padding: 15px 30px;
+        padding: 0 30px;
+        margin: 25px 0;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
     }
-    footer {
-        font-size: 14px;
-        padding: 12px;
+    
+    .link-box {
+        width: 260px;
+        height: 65px;
+        font-size: 18px;
+        padding: 15px 20px;
+    }
+    
+    .container {
+        max-width: 90%;
+        padding: 0 30px;
+    }
+    
+    .container h1 {
+        font-size: 30px;
+        margin: 40px 0;
+    }
+    
+    .team {
+        gap: 25px;
+    }
+    
+    .member {
+        max-width: 320px;
+        padding: 25px;
+    }
+    
+    .member img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .member h3 {
+        font-size: 20px;
+    }
+    
+    .member p {
+        font-size: 18px;
+    }
+    
+    aside {
+        padding: 40px 30px;
+    }
+    
+    aside h2 {
+        font-size: 28px;
+    }
+    
+    .social-icons {
+        gap: 25px;
+    }
+    
+    .social-icons a {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .contact-section {
+        padding: 40px 30px;
+    }
+    
+    .contact-section h2 {
+        font-size: 32px;
+    }
+    
+    .contact-box {
+        padding: 25px;
+        max-width: 600px;
+    }
+    
+    .contact-item {
+        margin: 20px 0;
+    }
+    
+    .contact-icon {
+        font-size: 24px;
+    }
+    
+    .contact-item p {
+        font-size: 18px;
+    }
+    
+    .section-divider {
+        margin: 50px 0;
+    }
+    
+    .footer {
+        padding: 40px 30px;
+    }
+    
+    .footer-container {
+        gap: 40px;
+    }
+    
+    .footer-logo h2 {
+        font-size: 32px;
+    }
+    
+    .footer-logo p {
+        font-size: 16px;
+    }
+    
+    .footer-column h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .footer-column ul {
+        gap: 12px;
+    }
+    
+    .footer-subscribe p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    
+    .subscribe-btn {
+        padding: 12px 24px;
+        font-size: 18px;
     }
 }
 
@@ -595,28 +1077,167 @@ aside h2 {
 @media screen and (min-width: 1920px) {
     body {
         font-size: 20px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
     }
+    
     header {
         padding: 25px;
     }
+    
     .logo {
-        font-size: 36px;
+        position: absolute;
+        padding-top: 1.5rem;
     }
+    
+    .logo img {
+        max-height: 50px;
+    }
+    
     nav {
         width: 100%;
     }
+    
     .hero {
-        padding: 120px 80px;
+        padding: 150px 60px 60px;
     }
-    .hero-content {
-        max-width: 60%;
+    
+    .hero h1 {
+        font-size: 36px;
     }
-    .explore-btn {
+    
+    .xplora_logo, .fuecoco_logo {
+        height: 200px;
+        padding: 50px;
+    }
+    
+    .hero p {
         font-size: 20px;
-        padding: 18px 35px;
+        padding: 0 40px;
+        margin: 30px 0;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
     }
-    footer {
-        font-size: 16px;
-        padding: 14px;
+    
+    .link-box {
+        width: 280px;
+        height: 70px;
+        font-size: 20px;
+        padding: 20px;
+    }
+    
+    .container {
+        max-width: 80%;
+        padding: 0 40px;
+    }
+    
+    .container h1 {
+        font-size: 34px;
+        margin: 50px 0;
+    }
+    
+    .team {
+        gap: 30px;
+    }
+    
+    .member {
+        max-width: 350px;
+        padding: 30px;
+    }
+    
+    .member img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .member h3 {
+        font-size: 22px;
+    }
+    
+    .member p {
+        font-size: 20px;
+    }
+    
+    aside {
+        padding: 50px 40px;
+    }
+    
+    aside h2 {
+        font-size: 32px;
+    }
+    
+    .social-icons {
+        gap: 30px;
+    }
+    
+    .social-icons a {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .contact-section {
+        padding: 50px 40px;
+    }
+    
+    .contact-section h2 {
+        font-size: 36px;
+    }
+    
+    .contact-box {
+        padding: 30px;
+        max-width: 700px;
+    }
+    
+    .contact-item {
+        margin: 25px 0;
+    }
+    
+    .contact-icon {
+        font-size: 26px;
+    }
+    
+    .contact-item p {
+        font-size: 20px;
+    }
+    
+    .section-divider {
+        margin: 60px 0;
+    }
+    
+    .footer {
+        padding: 50px 40px;
+    }
+    
+    .footer-container {
+        gap: 50px;
+    }
+    
+    .footer-logo h2 {
+        font-size: 36px;
+    }
+    
+    .footer-logo p {
+        font-size: 18px;
+    }
+    
+    .footer-column h3 {
+        font-size: 22px;
+        margin-bottom: 25px;
+    }
+    
+    .footer-column ul {
+        gap: 15px;
+    }
+    
+    .footer-subscribe p {
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
+    
+    .subscribe-btn {
+        padding: 15px 30px;
+        font-size: 20px;
     }
 }

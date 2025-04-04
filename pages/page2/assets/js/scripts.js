@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (user) {
                     alert("Logged in successfully! Off you go, Explorer!");
-                    
+
                     localStorage.setItem("user", JSON.stringify({
                         name: user.name,
                         id: user.id

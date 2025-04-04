@@ -28,6 +28,28 @@
 
 .profile-icon {
     color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.profile-icon:hover {
+    color: #a7a7a7;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.profile-icon i {
+    transition: transform 0.3s ease;
+}
+
+.profile-icon:hover i {
+    transform: scale(1.1);
 }
 
 .section-divider {
@@ -37,8 +59,6 @@
     width: 100%;               /* Full width */
     margin: 60px 0;            /* Optional spacing */
 }
-
-
 
 body {
     background: url(../img/homePage.jpg) center center / cover;
@@ -79,9 +99,12 @@ header {
 }
 
 .menu-toggle {
+    display: block;
     font-size: 24px;
     cursor: pointer;
     color: white;
+    padding: 10px;
+    margin-right: 20px;
 }
 
 /* Updated Logo Styling */
@@ -176,23 +199,36 @@ header {
     justify-content: center;
     align-items: center;
     position: relative;
-    gap: 180px;                /* Space between text and icon */
-    text-align: left;         /* Optional: keeps your text left-aligned */
-    }
+    text-align: center;         /* Center all content */
+}
 
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 250px;               /* Increased gap between text and icon */
+    max-width: 1200px;        /* Limit the width of the content */
+    margin: 0 auto;           /* Center the content container */
+    flex-direction: row;      /* Ensure items are in a row */
+    padding: 0 20px;          /* Add padding for smaller screens */
 }
 
 .hero-icon {
     width: 50px;
     height: 50px;
-    flex: 1;
+    flex: 0 0 auto;           /* Don't grow or shrink */
     display: flex;
     justify-content: center;
     align-items: center;
+         /* Add right margin to balance the layout */
 }
 
 .hero-text {
-    width: 500px;
+    flex: 1;                  /* Allow text to take available space */
+    max-width: 700px;
+    text-align: left;         /* Keep text left-aligned within its container */
+    margin-right: 0;          /* Remove right margin since we're using gap */
+     /* Added left margin to align with QUICK LINKS */
 }
 
 .hero-text h1 {
@@ -338,6 +374,7 @@ header {
     font-weight: bold;
     color: white;
     text-transform: uppercase;
+    margin-top: -40px;
 }
 
 .text-box {
@@ -377,6 +414,7 @@ header {
     font-weight: bold;
     color: white;
     text-transform: uppercase;
+    margin-top: -40px;
 }
 
 .info-text-box {
@@ -583,6 +621,37 @@ header {
         font-size: 10px;
         padding: 8px;
     }
+    .title {
+        font-size: 24px;
+        margin-top: -20px;
+    }
+    .menu-toggle {
+        display: block;
+        position: relative;
+        left: 0;
+        top: 0;
+        transform: none;
+        margin-right: 20px;
+    }
+    .nav-links {
+        display: flex;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: transparent;
+        padding: 0;
+        flex-direction: row;
+        align-items: center;
+    }
+    .nav-links li {
+        margin: 0 10px;
+    }
+    .right-nav {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
 }
 
 /* iPad - 1024x768 */
@@ -615,6 +684,10 @@ header {
         font-size: 12px;
         padding: 10px;
     }
+    .title {
+        font-size: 28px;
+        margin-top: -30px;
+    }
 }
 
 /* Laptop - 1440x900 */
@@ -645,6 +718,10 @@ header {
         font-size: 14px;
         padding: 12px;
     }
+    .title {
+        font-size: 32px;
+        margin-top: -40px;
+    }
 }
 
 /* Desktop - 1920x1080 */
@@ -674,5 +751,406 @@ header {
     footer {
         font-size: 16px;
         padding: 14px;
+    }
+    .title {
+        font-size: 40px;
+        margin-top: -40px;
+    }
+}
+
+/* Responsive Design */
+/* Mobile Devices (iPhone 6 and smaller) */
+@media screen and (max-width: 375px) {
+    .nav {
+        padding: 0.5rem;
+    }
+
+    .logo img {
+        max-height: 40px;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0.5rem 0;
+    }
+
+    .hero {
+        padding: 80px 10px;
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .hero-text {
+        width: 100%;
+    }
+
+    .hero-text h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .hero-icon img {
+        width: 150px;
+    }
+
+    .links-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .link-box {
+        width: 90%;
+        height: 60px;
+    }
+
+    .services-container, .info-container {
+        padding: 20px;
+    }
+
+    .text-box, .info-text-box {
+        padding: 15px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .footer-column {
+        margin: 20px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: relative;
+        left: 0;
+        top: 0;
+        transform: none;
+        margin-right: 20px;
+    }
+
+    .nav-links {
+        display: flex;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: transparent;
+        padding: 0;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin: 0 10px;
+    }
+
+    .right-nav {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+}
+
+/* Tablets (iPad) */
+@media screen and (min-width: 376px) and (max-width: 1024px) {
+    .nav {
+        padding: 1rem;
+    }
+
+    .logo img {
+        max-height: 45px;
+    }
+
+    .hero {
+        padding: 100px 20px;
+        gap: 60px;
+    }
+
+    .hero-text {
+        width: 60%;
+    }
+
+    .hero-text h1 {
+        font-size: 50px;
+    }
+
+    .hero-icon img {
+        width: 180px;
+    }
+
+    .links-container {
+        gap: 30px;
+    }
+
+    .link-box {
+        width: 250px;
+    }
+
+    .services-container, .info-container {
+        padding: 30px;
+    }
+
+    .text-box, .info-text-box {
+        padding: 20px;
+    }
+
+    .footer-container {
+        padding: 30px;
+    }
+}
+
+/* Laptops */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    .nav {
+        padding: 1.5rem;
+    }
+
+    .logo img {
+        max-height: 50px;
+    }
+
+    .hero {
+        padding: 120px 30px;
+        gap: 100px;
+    }
+
+    .hero-text {
+        width: 50%;
+    }
+
+    .hero-text h1 {
+        font-size: 55px;
+    }
+
+    .hero-icon img {
+        width: 200px;
+    }
+
+    .links-container {
+        gap: 40px;
+    }
+
+    .link-box {
+        width: 280px;
+    }
+
+    .services-container, .info-container {
+        padding: 40px;
+    }
+
+    .text-box, .info-text-box {
+        padding: 25px;
+    }
+
+    .footer-container {
+        padding: 40px;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1441px) and (max-width: 1920px) {
+    .nav {
+        padding: 2rem;
+    }
+
+    .logo img {
+        max-height: 60px;
+    }
+
+    .hero {
+        padding: 150px 40px;
+        gap: 120px;
+    }
+
+    .hero-text {
+        width: 45%;
+    }
+
+    .hero-text h1 {
+        font-size: 65px;
+    }
+
+    .hero-icon img {
+        width: 250px;
+    }
+
+    .links-container {
+        gap: 50px;
+    }
+
+    .link-box {
+        width: 300px;
+    }
+
+    .services-container, .info-container {
+        padding: 50px;
+    }
+
+    .text-box, .info-text-box {
+        padding: 30px;
+    }
+
+    .footer-container {
+        padding: 50px;
+    }
+}
+
+/* Large Desktop */
+@media screen and (min-width: 1921px) {
+    .nav {
+        padding: 2.5rem;
+    }
+
+    .logo img {
+        max-height: 70px;
+    }
+
+    .hero {
+        padding: 180px 50px;
+        gap: 150px;
+    }
+
+    .hero-text {
+        width: 40%;
+    }
+
+    .hero-text h1 {
+        font-size: 75px;
+    }
+
+    .hero-icon img {
+        width: 300px;
+    }
+
+    .links-container {
+        gap: 60px;
+    }
+
+    .link-box {
+        width: 350px;
+    }
+
+    .services-container, .info-container {
+        padding: 60px;
+    }
+
+    .text-box, .info-text-box {
+        padding: 35px;
+    }
+
+    .footer-container {
+        padding: 60px;
+    }
+}
+
+/* Menu Toggle for Mobile */
+@media screen and (min-width: 376px) {
+    .menu-toggle {
+        display: none;
+    }
+}
+
+/* Responsive adjustments for hero section */
+@media screen and (max-width: 1200px) {
+    .hero-content {
+        gap: 100px;
+    }
+    
+    .hero-text {
+        margin-left: 100px;
+    }
+    
+    .hero-icon {
+        margin-right: 100px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .hero-content {
+        gap: 80px;
+    }
+    
+    .hero-text {
+        margin-left: 80px;
+    }
+    
+    .hero-icon {
+        margin-right: 80px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-content {
+        flex-direction: column; /* Stack vertically on smaller screens */
+        gap: 40px;             /* Reduced gap for smaller screens */
+        padding: 0 15px;
+    }
+    
+    .hero-text {
+        max-width: 100%;
+        text-align: center;
+        margin-right: 0;       /* Remove right margin on mobile */
+        margin-left: 0;        /* Remove left margin on mobile */
+    }
+    
+    .hero-icon {
+        margin-right: 0;       /* Remove right margin on mobile */
+    }
+    
+    .hero-text h1 {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .hero-content {
+        gap: 30px;
+        padding: 0 10px;
+    }
+    
+    .hero-text h1 {
+        font-size: 40px;
+    }
+    
+    .hero-text p {
+        font-size: 14px;
+    }
+    
+    .hero-icon img {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .hero-content {
+        gap: 20px;
+    }
+    
+    .hero-text h1 {
+        font-size: 32px;
+    }
+    
+    .hero-text p {
+        font-size: 12px;
+    }
+    
+    .hero-icon img {
+        width: 120px;
     }
 }
