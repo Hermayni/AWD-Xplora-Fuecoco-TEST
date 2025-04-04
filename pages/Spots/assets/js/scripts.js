@@ -462,50 +462,39 @@ function checkAuth() {
     return true;
 }
 
+// Function to check if the user is logged in
+function isUserLoggedIn() {
+    return localStorage.getItem("user") !== null;
+}
+
+// Simple authentication redirect
+function authRedirect(targetPage) {
+    if (!isUserLoggedIn()) {
+        alert("Please login to continue.");
+        window.location.href = "../../pages/page2/index.html";
+        return false;
+    }
+    window.location.href = targetPage;
+    return true;
+}
+
 document.addEventListener("DOMContentLoaded", function () {
-    // Mobile Menu Toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
+    // Check authentication on page load
+    checkAuth();
 
-    if (menuToggle) {
-        menuToggle.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
+    // Mobile menu toggle
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
         });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            if (!event.target.closest('.nav') && navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-            }
-        });
-
-        // Close menu when clicking a link
-        const links = navLinks.querySelectorAll('a');
-        links.forEach(link => {
-            link.addEventListener('click', function() {
-                navLinks.classList.remove('active');
-            });
-        });
-    }
-
-    // Function to check if the user is logged in
-    function isUserLoggedIn() {
-        return localStorage.getItem("user") !== null;
-    }
-
-    // Redirect to login page if user is not logged in
-    function handleAuthRedirect(targetPage) {
-        if (!isUserLoggedIn()) {
-            alert("Please login to continue.");
-            window.location.href = "../../pages/page2/index.html"; // Redirect to login page
-        } else {
-            window.location.href = targetPage; // Redirect to the intended page
-        }
     }
 
     // Profile Icon Click - Redirect if logged in, otherwise go to login
     document.querySelector(".profile-icon").addEventListener("click", function () {
-        handleAuthRedirect("../../pages/profile/index.html");
+        authRedirect("../../pages/profile/index.html");
     });
 
     // Post Form Handling

@@ -58,11 +58,13 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Profile icon click handler
     function handleProfileClick() {
-        if (isUserLoggedIn()) {
-            window.location.href = "../../pages/profile/index.html";
-        } else {
+        if (!isUserLoggedIn()) {
+            alert("Please login to continue.");
             window.location.href = "../../pages/page2/index.html";
+            return false;
         }
+        window.location.href = "../../pages/profile/index.html";
+        return true;
     }
     
     // Add click event to profile icon

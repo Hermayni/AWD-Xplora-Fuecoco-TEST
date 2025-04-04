@@ -38,14 +38,15 @@ document.addEventListener("DOMContentLoaded", function () {
         return localStorage.getItem("user") !== null;
     }
 
-    // Redirect to login page if user is not logged in
-    function handleAuthRedirect(targetPage) {
+    // Simple authentication redirect
+    function authRedirect(targetPage) {
         if (!isUserLoggedIn()) {
             alert("Please login to continue.");
-            window.location.href = "../../pages/page2/index.html"; // Redirect to login page
-        } else {
-            window.location.href = targetPage; // Redirect to the intended page
+            window.location.href = "/pages/page2/index.html";
+            return false;
         }
+        window.location.href = targetPage;
+        return true;
     }
 
     // Handle user logout
@@ -65,6 +66,16 @@ document.addEventListener("DOMContentLoaded", function () {
         // Redirect to main index page
         window.location.href = '/index.html';
     }
+
+    // Profile Icon Click - Redirect if logged in, otherwise go to login
+    document.querySelector(".profile-icon").addEventListener("click", function () {
+        authRedirect("/pages/profile/index.html");
+    });
+
+    // "Click to View Top Spots" Button - Redirect if logged in, otherwise go to login
+    document.querySelector(".hero-text .btn").addEventListener("click", function () {
+        authRedirect("/pages/Spots/index.html");
+    });
 
     // Update profile icon based on login status
     function updateProfileIcon() {
@@ -94,13 +105,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Profile icon click handler
     function handleProfileClick() {
-        handleAuthRedirect("../../pages/profile/index.html");
+        authRedirect("../../pages/profile/index.html");
     }
-
-    // "Click to View Top Spots" Button - Redirect if logged in, otherwise go to login
-    document.querySelector(".hero-text .btn").addEventListener("click", function () {
-        handleAuthRedirect("../../pages/Spots/index.html"); // Adjust the path as needed
-    });
 
     // Update profile icon based on login status
     updateProfileIcon();
