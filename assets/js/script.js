@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function authRedirect(targetPage) {
         if (!isUserLoggedIn()) {
             alert("Please login to continue.");
-            window.location.href = "/pages/page2/index.html";
+            window.location.href = "/AWD-Xplora-Fuecoco-TEST/pages/page2/index.html";
             return false;
         }
         window.location.href = targetPage;
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // "Click to View Top Spots" Button - Redirect if logged in, otherwise go to login
     document.querySelector(".hero-text .btn").addEventListener("click", function () {
-        authRedirect("/pages/Spots/index.html");
+        authRedirect("/AWD-Xplora-Fuecoco-TEST/pages/Spots/index.html");
     });
 
     // Update profile icon based on login status

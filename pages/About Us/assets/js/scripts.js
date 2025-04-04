@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
             window.location.href = "../../pages/page2/index.html";
             return false;
         }
-        window.location.href = "../../pages/profile/index.html";
+        window.location.href = "#";
         return true;
     }
     
