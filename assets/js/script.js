@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function handleAuthRedirect(targetPage) {
         if (!isUserLoggedIn()) {
             alert("Please login to continue.");
-            window.location.href = "/pages/page2/index.html"; // Redirect to login page
+            window.location.href = "../../pages/page2/index.html"; // Redirect to login page
         } else {
             window.location.href = targetPage; // Redirect to the intended page
         }

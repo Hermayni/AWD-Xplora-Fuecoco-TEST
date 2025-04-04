@@ -462,21 +462,6 @@ function checkAuth() {
     return true;
 }
 
-// Function to check if the user is logged in
-function isUserLoggedIn() {
-    return localStorage.getItem("user") !== null;
-}
-
-// Redirect to login page if user is not logged in
-function handleAuthRedirect(targetPage) {
-    if (!isUserLoggedIn()) {
-        alert("Please login to continue.");
-        window.location.href = "../../pages/page2/index.html"; // Redirect to login page
-    } else {
-        window.location.href = targetPage; // Redirect to the intended page
-    }
-}
-
 document.addEventListener("DOMContentLoaded", function () {
     // Mobile Menu Toggle
     const menuToggle = document.querySelector('.menu-toggle');
@@ -501,6 +486,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 navLinks.classList.remove('active');
             });
         });
+    }
+
+    // Function to check if the user is logged in
+    function isUserLoggedIn() {
+        return localStorage.getItem("user") !== null;
+    }
+
+    // Redirect to login page if user is not logged in
+    function handleAuthRedirect(targetPage) {
+        if (!isUserLoggedIn()) {
+            alert("Please login to continue.");
+            window.location.href = "../../pages/page2/index.html"; // Redirect to login page
+        } else {
+            window.location.href = targetPage; // Redirect to the intended page
+        }
     }
 
     // Profile Icon Click - Redirect if logged in, otherwise go to login

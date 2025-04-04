@@ -59,9 +59,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Profile icon click handler
     function handleProfileClick() {
         if (isUserLoggedIn()) {
-            window.location.replace('/pages/profile/index.html');
+            window.location.href = "../../pages/profile/index.html";
         } else {
-            window.location.replace('/pages/page2/index.html');
+            window.location.href = "../../pages/page2/index.html";
         }
     }
     
