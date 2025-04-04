@@ -342,9 +342,9 @@ aside h2 {
     background-position: center;
 }
 
-.social-icons .facebook { background-image: url(/pages/About Us/assets/img/V2.png); } 
-.social-icons .instagram { background-image: url(/pages/About Us/assets/img/V3.webp); }
-.social-icons .other { background-image: url(/pages/About Us/assets/img/V4.webp); }
+.social-icons .facebook { background-image: url('../img/V2.png'); } 
+.social-icons .instagram { background-image: url('../img/V3.webp'); }
+.social-icons .other { background-image: url('../img/V4.webp'); }
 
 .learn-more {
     text-decoration: none;
