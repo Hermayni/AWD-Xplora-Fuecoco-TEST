@@ -449,14 +449,14 @@ function handleLogout() {
     console.log('User logged out, localStorage cleared');
     
     // Redirect to main index page
-    window.location.href = '/index.html';
+    window.location.href = './index.html';
 }
 
 // Check authentication for protected routes
 function checkAuth() {
     const currentUser = JSON.parse(localStorage.getItem('user'));
     if (!currentUser || !currentUser.id) {
-        window.location.href = '/pages/page2/index.html';
+        window.location.href = './pages/page2/index.html';
         return false;
     }
     return true;
