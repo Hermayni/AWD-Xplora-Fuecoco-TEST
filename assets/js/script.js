@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
         const currentUser = JSON.parse(localStorage.getItem('user'));
         if (!currentUser || !currentUser.id) {
-            window.location.href = '/index.html';
+            window.location.href = './index.html';
             return;
         }
 
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log('User logged out, localStorage cleared');
         
         // Redirect to main index page
-        window.location.href = '/index.html';
+        window.location.href = './index.html';
     }
 
     // Profile Icon Click - Redirect if logged in, otherwise go to login
