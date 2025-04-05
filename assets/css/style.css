@@ -194,41 +194,49 @@ header {
     background-size: cover;
     background-position: center;
     width: 100%;
-    padding: 120px 20px; /* Avoid content being hidden by fixed header */
+    padding: 120px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    text-align: center;         /* Center all content */
+    text-align: center;
 }
 
 .hero-content {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 250px;               /* Increased gap between text and icon */
-    max-width: 1200px;        /* Limit the width of the content */
-    margin: 0 auto;           /* Center the content container */
-    flex-direction: row;      /* Ensure items are in a row */
-    padding: 0 20px;          /* Add padding for smaller screens */
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-direction: row;
+    padding: 0 40px;
+    position: relative;
+    gap: 60px;
 }
 
 .hero-icon {
     width: 50px;
     height: 50px;
-    flex: 0 0 auto;           /* Don't grow or shrink */
+    flex: 0 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-         /* Add right margin to balance the layout */
+    position: relative;
+    z-index: 1;
+}
+
+.hero-icon img {
+    width: 250px;
+    height: auto;
+    object-fit: contain;
 }
 
 .hero-text {
-    flex: 1;                  /* Allow text to take available space */
-    max-width: 700px;
-    text-align: left;         /* Keep text left-aligned within its container */
-    margin-right: 0;          /* Remove right margin since we're using gap */
-     /* Added left margin to align with QUICK LINKS */
+    flex: 1;
+    max-width: 600px;
+    text-align: left;
+    position: relative;
+    z-index: 2;
 }
 
 .hero-text h1 {
@@ -256,33 +264,25 @@ header {
     font-weight:bold;
     margin-bottom: 80px;
 }
+
+/* Quick Links Section */
 .links-container {
     width: 100%;
-   
     position: relative;
     display: flex;
-    align-items: center; /* Vertically align boxes */
-}
-
-/* Skewer Line */
-.links-container::before {
-    .links-container::before {
-        content: "";
-        position: fixed;            /* Fixed to span the entire screen */
-        top: 50%;                   /* Middle of the screen */
-        left: 0;
-        width: 100vw;               /* Full viewport width */
-        height: 2px;
-        background-color: #fff;     /* Skewer color */
-        z-index: 1;                 /* Behind the buttons */
-    }
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 0 20px;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
 .link-box {
     font-family: "syncopate";
     width: 280px;
     height: 70px;
-    padding: 20px 20px 20px 10px;
+    padding: 20px;
     background-color: rgb(92, 92, 92);
     font-size: 15px;
     font-weight: bold;
@@ -291,12 +291,8 @@ header {
     border-radius: 1px;
     text-align: left;
     position: relative;
-    margin-right: 20px;
     z-index: 2;
     cursor: pointer;
-
-    align-items: center;
-    justify-content: center;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -317,7 +313,6 @@ header {
     background-color: #ccc;
     color: rgb(92, 92, 92);
 }
-
 
 /* 🔥 Skewer / Barbecue Stick Line Effect */
 .links-container::before {
@@ -375,12 +370,13 @@ header {
     color: white;
     text-transform: uppercase;
     margin-top: -40px;
+    z-index: 10;
 }
 
 .text-box {
     font-family: "syncopate";
     position: absolute;
-    top: 75px;
+    top: 100px;
     left: 49px;
     width: 49%;
     background: rgba(0, 0, 0, 0);
@@ -390,7 +386,6 @@ header {
     font-size: 12px;
     line-height: 1.5;
 }
-
 
 /*Info Section*/
 .info-container {
@@ -415,19 +410,21 @@ header {
     color: white;
     text-transform: uppercase;
     margin-top: -40px;
+    z-index: 10;
 }
 
 .info-text-box {
     font-family: "syncopate";
     position: absolute;
-    top: 60px;
+    top: 100px;
     left: 114px;
     width: 48%;
     background: rgba(0, 0, 0, 0);
-    padding: 20px;
+    padding-bottom: 20px;
+    height: 450px;
     border-radius: 10px;
     color: white;
-    font-size: 17.8px;
+    font-size: 16.5px;
     line-height: 1.5;
 }
 
@@ -585,180 +582,6 @@ header {
   
 /* Media Queries for Responsiveness */
 
-/* iPhone 6 - 375x667 */
-@media screen and (max-width: 375px) {
-    body {
-        font-size: 14px;
-    }
-    header {
-        flex-direction: column;
-        padding: 10px;
-    }
-    .logo {
-        font-size: 22px;
-    }
-    nav {
-        width: 100%;
-    }
-    .auth-links {
-        width: 100%;
-        justify-content: center;
-    }
-    .hero, .services {
-        padding: 50px 20px;
-    }
-    .hero-content, .services-content {
-        width: 90%;
-    }
-    .hero-buttons {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .hero-buttons button {
-        width: 100%;
-    }
-    footer {
-        font-size: 10px;
-        padding: 8px;
-    }
-    .title {
-        font-size: 24px;
-        margin-top: -20px;
-    }
-    .menu-toggle {
-        display: block;
-        position: relative;
-        left: 0;
-        top: 0;
-        transform: none;
-        margin-right: 20px;
-    }
-    .nav-links {
-        display: flex;
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: transparent;
-        padding: 0;
-        flex-direction: row;
-        align-items: center;
-    }
-    .nav-links li {
-        margin: 0 10px;
-    }
-    .right-nav {
-        position: relative;
-        display: flex;
-        align-items: center;
-    }
-}
-
-/* iPad - 1024x768 */
-@media screen and (max-width: 1024px) {
-    body {
-        font-size: 16px;
-    }
-    header {
-        flex-direction: column;
-        padding: 15px;
-    }
-    .logo {
-        font-size: 26px;
-    }
-    nav {
-        width: 100%;
-    }
-    .hero, .services {
-        padding: 80px 30px;
-    }
-    .hero-content, .services-content {
-        width: 80%;
-    }
-    .explore-btn {
-        font-size: 18px;
-        padding: 15px 30px;
-        margin-top: 20px;
-    }
-    footer {
-        font-size: 12px;
-        padding: 10px;
-    }
-    .title {
-        font-size: 28px;
-        margin-top: -30px;
-    }
-}
-
-/* Laptop - 1440x900 */
-@media screen and (max-width: 1440px) {
-    body {
-        font-size: 18px;
-    }
-    header {
-        padding: 20px;
-    }
-    .logo {
-        font-size: 30px;
-    }
-    nav {
-        width: 100%;
-    }
-    .hero, .services {
-        padding: 100px 60px;
-    }
-    .hero-content, .services-content {
-        max-width: 70%;
-    }
-    .explore-btn {
-        font-size: 18px;
-        padding: 15px 30px;
-    }
-    footer {
-        font-size: 14px;
-        padding: 12px;
-    }
-    .title {
-        font-size: 32px;
-        margin-top: -40px;
-    }
-}
-
-/* Desktop - 1920x1080 */
-@media screen and (min-width: 1920px) {
-    body {
-        font-size: 20px;
-    }
-    header {
-        padding: 25px;
-    }
-    .logo {
-        font-size: 36px;
-    }
-    nav {
-        width: 100%;
-    }
-    .hero, .services {
-        padding: 120px 80px;
-    }
-    .hero-content, .services-content {
-        max-width: 60%;
-    }
-    .explore-btn {
-        font-size: 20px;
-        padding: 18px 35px;
-    }
-    footer {
-        font-size: 16px;
-        padding: 14px;
-    }
-    .title {
-        font-size: 40px;
-        margin-top: -40px;
-    }
-}
-
-/* Responsive Design */
 /* Mobile Devices (iPhone 6 and smaller) */
 @media screen and (max-width: 375px) {
     .nav {
@@ -881,19 +704,19 @@ header {
         padding: 100px 20px;
         gap: 60px;
     }
-
+    
     .hero-text {
         width: 60%;
     }
-
+    
     .hero-text h1 {
         font-size: 50px;
     }
-
+    
     .hero-icon img {
-        width: 180px;
+        width: 200px;
     }
-
+    
     .links-container {
         gap: 30px;
     }
@@ -929,19 +752,19 @@ header {
         padding: 120px 30px;
         gap: 100px;
     }
-
+    
     .hero-text {
         width: 50%;
     }
-
+    
     .hero-text h1 {
         font-size: 55px;
     }
-
+    
     .hero-icon img {
-        width: 200px;
+        width: 220px;
     }
-
+    
     .links-container {
         gap: 40px;
     }
@@ -977,19 +800,19 @@ header {
         padding: 150px 40px;
         gap: 120px;
     }
-
+    
     .hero-text {
         width: 45%;
     }
-
+    
     .hero-text h1 {
         font-size: 65px;
     }
-
+    
     .hero-icon img {
         width: 250px;
     }
-
+    
     .links-container {
         gap: 50px;
     }
@@ -1025,19 +848,19 @@ header {
         padding: 180px 50px;
         gap: 150px;
     }
-
+    
     .hero-text {
         width: 40%;
     }
-
+    
     .hero-text h1 {
         font-size: 75px;
     }
-
+    
     .hero-icon img {
         width: 300px;
     }
-
+    
     .links-container {
         gap: 60px;
     }
@@ -1059,98 +882,364 @@ header {
     }
 }
 
-/* Menu Toggle for Mobile */
-@media screen and (min-width: 376px) {
-    .menu-toggle {
-        display: none;
-    }
-}
-
 /* Responsive adjustments for hero section */
 @media screen and (max-width: 1200px) {
     .hero-content {
-        gap: 100px;
+        gap: 40px;
+        padding: 0 30px;
     }
     
     .hero-text {
-        margin-left: 100px;
+        max-width: 500px;
     }
     
-    .hero-icon {
-        margin-right: 100px;
+    .hero-icon img {
+        width: 220px;
+    }
+    
+    .info-text-box {
+        font-size: 16px;
     }
 }
 
 @media screen and (max-width: 992px) {
     .hero-content {
-        gap: 80px;
+        gap: 30px;
+        padding: 0 20px;
     }
     
     .hero-text {
-        margin-left: 80px;
+        max-width: 450px;
     }
     
-    .hero-icon {
-        margin-right: 80px;
+    .hero-icon img {
+        width: 200px;
+    }
+    
+    .info-text-box {
+        font-size: 15px;
+        width: 55%;
     }
 }
 
 @media screen and (max-width: 768px) {
+    .hero {
+        padding: 150px 15px;
+    }
+    
     .hero-content {
-        flex-direction: column; /* Stack vertically on smaller screens */
-        gap: 40px;             /* Reduced gap for smaller screens */
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
         padding: 0 15px;
     }
     
     .hero-text {
         max-width: 100%;
         text-align: center;
-        margin-right: 0;       /* Remove right margin on mobile */
-        margin-left: 0;        /* Remove left margin on mobile */
     }
     
     .hero-icon {
-        margin-right: 0;       /* Remove right margin on mobile */
+        order: 2;
     }
     
-    .hero-text h1 {
-        text-align: center;
+    .hero-icon img {
+        width: 180px;
+    }
+    
+    .hero-text {
+        order: 1;
+    }
+    
+    .links-container {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    
+    .link-box {
+        width: 280px;
+        height: 70px;
     }
 }
 
 @media screen and (max-width: 576px) {
-    .hero-content {
-        gap: 30px;
-        padding: 0 10px;
+    .hero {
+        padding: 180px 15px;
     }
     
-    .hero-text h1 {
-        font-size: 40px;
-    }
-    
-    .hero-text p {
-        font-size: 14px;
-    }
-    
-    .hero-icon img {
-        width: 150px;
-    }
-}
-
-@media screen and (max-width: 375px) {
     .hero-content {
         gap: 20px;
     }
     
     .hero-text h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+    
+    .hero-text p {
+        font-size: 14px;
+        text-align: center;
+    }
+    
+    .hero-icon img {
+        width: 150px;
+    }
+    
+    .link-box {
+        width: 280px;
+        height: 70px;
+        padding: 20px;
+    }
+    
+    .quick-links {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .hero {
+        padding: 200px 10px;
+    }
+    
+    .hero-content {
+        gap: 15px;
+    }
+    
+    .hero-text h1 {
         font-size: 32px;
+        text-align: center;
     }
     
     .hero-text p {
         font-size: 12px;
+        text-align: center;
     }
     
     .hero-icon img {
         width: 120px;
+    }
+    
+    .link-box {
+        width: 280px;
+        height: 70px;
+        padding: 20px;
+        font-size: 15px;
+    }
+    
+    .quick-links {
+        margin-top: 15px;
+        margin-bottom: 40px;
+    }
+}
+
+/* Responsive adjustments for services and info sections */
+@media screen and (max-width: 1200px) {
+    .text-box {
+        width: 40%;
+        left: 4%;
+    }
+    
+    .info-text-box {
+        width: 40%;
+        left: 4%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .text-box {
+        width: 35%;
+        left: 3%;
+        font-size: 11px;
+    }
+    
+    .info-text-box {
+        width: 35%;
+        left: 3%;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .services-container, .info-container {
+        height: auto;
+        min-height: 700px;
+        padding: 20px;
+        padding-top: 60px;
+    }
+    
+    .text-box {
+        width: 80%;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 100px;
+        text-align: center;
+        padding: 15px;
+        line-height: 1.8;
+    }
+    
+    .info-text-box {
+        width: 80%;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 100px;
+        text-align: center;
+        padding: 15px;
+        line-height: 1.8;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .services-container, .info-container {
+        min-height: 800px;
+        padding: 15px;
+        padding-top: 70px;
+    }
+    
+    .text-box {
+        width: 85%;
+        top: 120px;
+        font-size: 10px;
+        line-height: 2;
+        padding: 10px;
+    }
+    
+    .info-text-box {
+        width: 85%;
+        top: 120px;
+        font-size: 13px;
+        line-height: 2;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .services-container, .info-container {
+        min-height: 900px;
+        padding: 10px;
+        padding-top: 80px;
+    }
+    
+    .text-box {
+        width: 90%;
+        top: 140px;
+        font-size: 9px;
+        line-height: 2.2;
+        padding: 8px;
+    }
+    
+    .info-text-box {
+        width: 90%;
+        top: 140px;
+        font-size: 12px;
+        line-height: 2.2;
+        padding: 8px;
+    }
+}
+
+/* Responsive adjustments for titles */
+@media screen and (max-width: 1200px) {
+    .title {
+        font-size: 28px;
+        margin-top: 25px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .title {
+        font-size: 24px;
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 22px;
+        margin-top: 35px;
+    }
+    
+    .services-container, .info-container {
+        height: auto;
+        min-height: 700px;
+        padding: 20px;
+        padding-top: 60px;
+    }
+    
+    .text-box {
+        width: 80%;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 100px;
+        text-align: center;
+        padding: 15px;
+        line-height: 1.8;
+    }
+    
+    .info-text-box {
+        width: 80%;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 100px;
+        text-align: center;
+        padding: 15px;
+        line-height: 1.8;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .title {
+        font-size: 20px;
+        margin-top: 40px;
+    }
+    
+    .services-container, .info-container {
+        min-height: 800px;
+        padding: 15px;
+        padding-top: 70px;
+    }
+    
+    .text-box {
+        width: 85%;
+        top: 120px;
+        font-size: 10px;
+        line-height: 2;
+        padding: 10px;
+    }
+    
+    .info-text-box {
+        width: 85%;
+        top: 120px;
+        font-size: 13px;
+        line-height: 2;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .title {
+        font-size: 18px;
+        margin-top: 45px;
+    }
+    
+    .services-container, .info-container {
+        min-height: 900px;
+        padding: 10px;
+        padding-top: 80px;
+    }
+    
+    .text-box {
+        width: 90%;
+        top: 140px;
+        font-size: 9px;
+        line-height: 2.2;
+        padding: 8px;
+    }
+    
+    .info-text-box {
+        width: 90%;
+        top: 140px;
+        font-size: 12px;
+        line-height: 2.2;
+        padding: 8px;
     }
 }
